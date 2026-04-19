@@ -1,0 +1,1 @@
+export type featureType = "shipping" | "payment" | "return" | "support";

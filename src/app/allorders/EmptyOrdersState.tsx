@@ -1,0 +1,37 @@
+import { Button } from "@/components/ui/button";
+import { fraunces } from "@/Fonts";
+import { MoveRight, PackageX } from "lucide-react";
+import Link from "next/link";
+
+export default function EmptyOrdersState() {
+  return (
+    <div className="flex h-125 items-center justify-center rounded-2xl bg-white px-10 py-20">
+      <div className="flex flex-col items-center justify-center">
+        <div className="bg-crimson-soft border-crimson text-crimson mb-5 flex h-20 w-20 items-center justify-center rounded-full border">
+          <PackageX  size={32} />
+        </div>
+        <h3 className={`${fraunces.className} mb-4 text-3xl font-bold`}>
+          No Orders Yet
+        </h3>
+        <span className="mb-6 text-sm text-gray-600 text-center">
+          You haven&apos;t placed any orders yet. Start exploring our products and place your first order today.
+        </span>
+        <Link href={"/"}>
+          <Button
+            variant="default"
+            className="hover:bg-crimson-dark group crimson-shadow-hover bg-crimson mb-2 flex h-14 w-full cursor-pointer items-center justify-center px-7 font-bold hover:-translate-y-0.5"
+          >
+            <span>Continue Shopping</span>
+            <span>
+              <MoveRight
+                size={24}
+                strokeWidth={4}
+                className="transition group-hover:translate-x-0.5"
+              />
+            </span>
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+}

@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
+import { Toaster } from "sonner";
+import Footer from "./_Components/Footer";
+import { Navbar } from "./_Components/Navbar";
 import "./globals.css";
+import MySessionProvider from "./_Providers/MySessionProvider";
+import CartContextProvider from "./_context/CartContextProvider";
+import WishlistContextProvider from "./_context/wishlistContextProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"], // optional but recommended
 });
 
 export const metadata: Metadata = {
   title: "Cartix — Everything You Need, Delivered",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -22,11 +27,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
+      <body>
+        <MySessionProvider>
+          <CartContextProvider>
+            <WishlistContextProvider>
+              <Navbar />
+              {children}
+              <Footer />
+              <Toaster />
+            </WishlistContextProvider>
+          </CartContextProvider>
+        </MySessionProvider>
+      </body>
     </html>
   );
 }
