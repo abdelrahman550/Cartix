@@ -20,11 +20,9 @@ import LoadingCartState from "./LoadingCartState";
 export default function Page() {
   const { cartData, isLoading } = useContext(cartContext);
 
-  const cartItems = cartData?.data.products ?? [];
-
-  const cartFinalPrice = cartData?.data.totalCartPrice ?? 0;
-
-  const cartTotalItems = cartData?.numOfCartItems ?? 0;
+  const cartItems = cartData?.data?.products ?? [];
+const cartFinalPrice = cartData?.data?.totalCartPrice ?? 0;
+const cartTotalItems = cartData?.numOfCartItems ?? 0;
 
   return (
     <>

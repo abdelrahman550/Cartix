@@ -30,23 +30,29 @@ export default function CartContextProvider({
 
       const userCartData = await getUserCart();
 
-      if (!userCartData) return;
+      if (!userCartData?.data) {
+        setCartData(null);
+        setCartItemsCount(0);
+        setIsLoading(false);
+        return;
+      }
 
       setCartItemsCount(userCartData.numOfCartItems);
       setCartData(userCartData);
     } finally {
       setIsLoading(false);
-      
     }
   }
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [cartData, setCartData] = useState<CartResType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    if (status === "authenticated") {
-      getCartData();
-    }
+    if (status !== "authenticated") return;
 
+    getCartData();
+  }, [status]);
+
+  useEffect(() => {
     if (status === "unauthenticated") {
       setCartItemsCount(0);
       setCartData(null);
