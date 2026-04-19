@@ -6,7 +6,7 @@ export default async function proxy(req : NextRequest) {
     const jwt = await getToken({req});
 
     if(jwt != null) {
-        return NextResponse.redirect(`${process.env.NEXTAUTH_URL}`)
+        return NextResponse.redirect(new URL("/", req.url))
     }
     
   return NextResponse.next()
