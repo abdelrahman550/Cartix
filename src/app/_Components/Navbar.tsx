@@ -47,7 +47,7 @@ export function Navbar() {
   ];
 
   return (
-    <NavigationMenu className="sticky top-0 z-50 flex h-16 w-full max-w-none border-b bg-white px-14 shadow-2xs">
+    <NavigationMenu className="sticky top-0 z-50 flex h-16 w-full max-w-none border-b bg-white px-10 md:px-14 shadow-2xs">
       <div className="flex flex-1 items-center gap-6">
         <Link href={"/"}>
           <div

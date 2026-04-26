@@ -14,14 +14,14 @@ export default function HeroSlider() {
   return (
     <div className="relative w-full">
       <button
-        className="hover:text-crimson absolute top-1/2 left-1 z-10 flex -translate-y-1/2 cursor-pointer items-center justify-center bg-transparent transition"
+        className="hover:text-crimson absolute top-1/2 left-1 z-10 hidden md:flex -translate-y-1/2 cursor-pointer items-center justify-center bg-transparent transition"
         onClick={() => swiperRef.current?.slidePrev()}
       >
         <ChevronLeft size={60} strokeWidth={2} />
       </button>
 
       <button
-        className="right-btn hover:text-crimson absolute top-1/2 right-4 z-10 flex -translate-y-1/2 cursor-pointer items-center justify-center bg-transparent transition"
+        className="right-btn hover:text-crimson absolute top-1/2 right-4 z-10 hidden md:flex -translate-y-1/2 cursor-pointer items-center justify-center bg-transparent transition"
         onClick={() => swiperRef.current?.slideNext()}
       >
         <ChevronRight size={60} strokeWidth={2} />

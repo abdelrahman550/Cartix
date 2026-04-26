@@ -78,7 +78,7 @@ export default function HeroSliderCategories({ category }: Props) {
             <div
               className={
                 fraunces.className +
-                " mb-4 text-center text-6xl leading-16 font-semibold tracking-tight lg:text-start"
+                " mb-4 text-center text-5xl md:text-6xl leading-14 md:leading-16 font-semibold tracking-tight lg:text-start"
               }
             >
               {category === "fashion" && (

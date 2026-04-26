@@ -1,11 +1,12 @@
 "use client";
 import {
   Heart,
-  LinkIcon,
+  House,
+  LayoutGrid,
   LogOutIcon,
   Menu,
   Package,
-  UserIcon,
+  UserIcon
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -64,25 +65,25 @@ export function NavDropDown() {
         )}
         <Link href={"/"}>
           <DropdownMenuItem>
-            <Package />
+            <House />
             Home
           </DropdownMenuItem>
         </Link>
         <Link href={"/Categories"}>
           <DropdownMenuItem>
-            <LinkIcon />
+            <LayoutGrid />
             Categories
           </DropdownMenuItem>
         </Link>
         <Link href={"/Brands"}>
           <DropdownMenuItem>
-            <LinkIcon />
+            <LayoutGrid />
             Brands
           </DropdownMenuItem>
         </Link>
         <Link href={"/Shop"}>
           <DropdownMenuItem>
-            <LinkIcon />
+            <LayoutGrid />
             Shop
           </DropdownMenuItem>
         </Link>
