@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Cartix — Full-Featured E-Commerce Frontend
 
-## Getting Started
+> A large-scale, production-ready e-commerce frontend built with Next.js 14 — covering the full shopping journey from browsing to checkout, with authentication, cart, wishlist, and order management.
 
-First, run the development server:
+**[→ View Live Demo](https://cartix-oxo.vercel.app/)**
+
+---
+
+## 🌟 Why Cartix?
+
+Cartix isn't a simple CRUD app or a tutorial clone. It's a complete frontend system designed at scale, handling:
+
+- **Complex global state** — cart and wishlist are synced live across every page without a third-party state library
+- **Real authentication flows** — protected routes, session-aware UI, and role-based page access built with NextAuth
+- **Scalable architecture** — server actions, context providers, and reusable section components keep the codebase clean as it grows
+- **Form reliability** — every user input is validated with Zod schemas before hitting any action, preventing bad data entirely
+- **Smooth UX** — Framer Motion animations make interactions feel polished and intentional throughout the app
+
+---
+
+## ✨ Features
+
+**Shopping**
+- Browse all products, categories, brands and deals
+- Product detail pages with image gallery and variant selection
+- Promotional sections — Hero, Best Deals, Featured Products
+
+**Cart & Wishlist**
+- Add, update, or remove items — reflected instantly everywhere on the page
+- Persistent cart and wishlist state shared across the entire app
+- Full checkout flow from cart to order confirmation
+
+**Authentication**
+- Secure login and signup with session-based protection
+- Authentication-protected routes that redirect unauthenticated users
+- Session-aware navbar and UI that adapts per user state
+
+**Orders**
+- Order history page per user
+- Checkout action that processes and stores orders
+
+**Navigation & Search**
+- Responsive navbar with dropdowns and mobile menu
+- Profile menu, search input, and category navigation
+
+**Forms**
+- All inputs validated client-side with React Hook Form + Zod
+- Clean, accessible error messaging on every form
+
+---
+
+## 🧱 Tech Stack
+
+| Category | Technology |
+|---|---|
+| Framework | [Next.js 14](https://nextjs.org/) — App Router + Server Actions |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) |
+| UI Components | [shadcn/ui](https://ui.shadcn.com/) |
+| Animations | [Framer Motion](https://www.framer.com/motion/) |
+| Authentication | [NextAuth.js](https://next-auth.js.org/) |
+| Form Handling | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
+| State Management | React Context API |
+| Deployment | [Vercel](https://vercel.com/) |
+
+---
+
+## 🗺️ Pages
+
+| Route | Description |
+|---|---|
+| `/` | Homepage — Hero, Best Deals, Categories, Products |
+| `/Shop` | Full product listing |
+| `/Product/[id]` | Product detail page |
+| `/Categories` | Browse by category |
+| `/Brands` | Browse by brand |
+| `/Cart` | Shopping cart |
+| `/Wishlist` | Saved items |
+| `/Checkout` | Order checkout |
+| `/allorders` | Order history |
+| `/Login` | User login |
+| `/Signup` | User registration |
+
+---
+
+## ⚙️ Getting Started
 
 ```bash
+git clone https://github.com/abdelrahman550/cartix.git
+cd cartix
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 License
 
-## Learn More
+Open source under the [MIT License](LICENSE).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🙌 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built with ❤️ by **Abdelrahman Mohamed**
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/abdelrahman550)
